@@ -40,9 +40,7 @@ public class Books {
      * @return list of book titles
      */
     public static List<String> titlesOf(List<Book> books) {
-        // [your code here]
-        
-        return Collections.emptyList();
+       return books.stream().map(book -> book.getTitle()).collect(Collectors.toList());
     }
 
     /**
@@ -52,9 +50,7 @@ public class Books {
      * @return list of author full names
      */
     public static List<String> namesOfAuthorsOf(List<Book> books) {
-        // [your code here]
-        
-        return Collections.emptyList();
+        return books.stream().map(book -> book.getAuthor().fullName()).collect(Collectors.toList());
     }
 
     /**
@@ -64,8 +60,6 @@ public class Books {
      * @return set of publishers
      */
     public static Set<Publisher> publishersRepresentedBy(List<Book> books) {
-        // [your code here]
-
-        return Collections.emptySet();
+        return books.stream().map(book -> book.getPublisher()).collect(Collectors.toSet());
     }
 }
