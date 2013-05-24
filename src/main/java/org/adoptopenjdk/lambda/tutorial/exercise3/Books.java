@@ -40,7 +40,7 @@ public class Books {
      * @return list of book titles
      */
     public static List<String> titlesOf(List<Book> books) {
-       return books.stream().map(book -> book.getTitle()).collect(Collectors.toList());
+       return books.stream().map(Book::getTitle).collect(Collectors.toList());
     }
 
     /**
@@ -60,6 +60,6 @@ public class Books {
      * @return set of publishers
      */
     public static Set<Publisher> publishersRepresentedBy(List<Book> books) {
-        return books.stream().map(book -> book.getPublisher()).collect(Collectors.toSet());
+        return books.stream().map(Book::getPublisher).collect(Collectors.toSet());
     }
 }
